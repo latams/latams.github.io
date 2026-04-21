@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tami Abdollah — Journalist & Editor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-dark:  #243d30;
+      --green-mid:   #2f5141;
+      --green-light: #3d6b52;
+      --blue-dark:   #1c3554;
+      --blue-mid:    #254876;
+      --blue-light:  #3a6090;
+      --cream:       #f5f3ee;
+      --off-white:   #faf9f6;
+      --warm-gray:   #e8e4dc;
+      --text:        #1a1a18;
+      --text-muted:  #5a5a52;
+      --border:      #d4cfc5;
+      --accent-green:#4a8a63;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--off-white);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(250, 249, 246, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--green-dark);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--green-dark); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, var(--green-dark) 0%, var(--blue-dark) 100%);
+      display: flex;
+      align-items: center;
+      padding: 120px 48px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-inner {
+      max-width: 860px;
+      position: relative;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 24px;
+    }
+
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: #fff;
+      margin-bottom: 28px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-tagline {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 300;
+      color: rgba(255,255,255,0.75);
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 44px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 48px;
+    }
+
+    .badge {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 2px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      transition: background 0.25s, border-color 0.25s;
+    }
+
+    .hero-cta:hover {
+      background: rgba(255,255,255,0.18);
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 48px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 40px;
+      height: 1px;
+      background: rgba(255,255,255,0.25);
+    }
+
+    /* ── SHARED SECTION STYLES ── */
+    section { padding: 96px 48px; }
+
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-green);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--green-dark);
+      margin-bottom: 48px;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--blue-mid);
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--cream); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-text p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .stat-card {
+      background: var(--off-white);
+      padding: 28px 24px;
+      border-left: 3px solid var(--green-light);
+    }
+
+    .stat-card:nth-child(2n) { border-left-color: var(--blue-mid); }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--off-white); }
+
+    .timeline { position: relative; }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 0;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .timeline-item {
+      padding-left: 36px;
+      padding-bottom: 52px;
+      position: relative;
+    }
+
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -4px;
+      top: 8px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--green-light);
+      border: 2px solid var(--off-white);
+    }
+
+    .timeline-org {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue-mid);
+      margin-bottom: 6px;
+    }
+
+    .timeline-role {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 4px;
+    }
+
+    .timeline-date {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .timeline-desc {
+      font-size: 0.92rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--text);
+      max-width: 680px;
+    }
+
+    .timeline-highlights {
+      margin-top: 14px;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .timeline-highlights li {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .timeline-highlights li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent-green);
+    }
+
+    /* ── NOTABLE WORK ── */
+    #work { background: var(--cream); }
+
+    .clips-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .clip-card {
+      background: var(--off-white);
+      padding: 32px 28px;
+      text-decoration: none;
+      display: block;
+      border-top: 3px solid transparent;
+      transition: border-color 0.2s, transform 0.2s;
+      position: relative;
+    }
+
+    .clip-card:hover {
+      border-top-color: var(--accent-green);
+      transform: translateY(-2px);
+    }
+
+    .clip-pub {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--blue-mid);
+      margin-bottom: 12px;
+    }
+
+    .clip-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--green-dark);
+      margin-bottom: 14px;
+    }
+
+    .clip-desc {
+      font-size: 0.84rem;
+      font-weight: 300;
+      line-height: 1.65;
+      color: var(--text-muted);
+    }
+
+    .clip-tag {
+      display: inline-block;
+      margin-top: 18px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-green);
+      border-bottom: 1px solid var(--accent-green);
+      padding-bottom: 1px;
+    }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--off-white); }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+
+    .skill-group h3 {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-green);
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .skill-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .skill-list li {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--text);
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .skill-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--blue-light);
+    }
+
+    /* ── ABROAD ── */
+    #abroad {
+      background: linear-gradient(160deg, var(--blue-dark) 0%, var(--green-dark) 100%);
+      color: white;
+    }
+
+    #abroad .section-label { color: rgba(255,255,255,0.5); }
+    #abroad .section-title { color: #fff; }
+    #abroad .section-title em { color: rgba(255,255,255,0.65); }
+
+    .abroad-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .abroad-text p {
+      font-size: 1.02rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 18px;
+    }
+
+    .locations-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .locations-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .locations-list li:first-child { border-top: 1px solid rgba(255,255,255,0.1); }
+
+    .loc-flag {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .loc-name {
+      font-weight: 500;
+      font-size: 0.92rem;
+      color: #fff;
+      margin-bottom: 3px;
+    }
+
+    .loc-context {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.5;
+    }
+
+    /* ── AWARDS ── */
+    #awards { background: var(--cream); }
+
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+    }
+
+    .award-item {
+      background: var(--off-white);
+      padding: 30px 28px;
+      border-left: 3px solid var(--accent-green);
+    }
+
+    .award-item:nth-child(even) { border-left-color: var(--blue-mid); }
+
+    .award-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 6px;
+    }
+
+    .award-detail {
+      font-size: 0.84rem;
+      font-weight: 300;
+      color: var(--text-muted);
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--green-dark);
+      color: white;
+      text-align: center;
+      padding: 96px 48px;
+    }
+
+    #contact .section-label { color: rgba(255,255,255,0.45); }
+
+    .contact-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .contact-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.65);
+      max-width: 480px;
+      margin: 0 auto 44px;
+      line-height: 1.7;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 30px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .contact-btn:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.55);
+    }
+
+    .contact-btn.primary {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.45);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #111;
+      padding: 28px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .footer-note {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      section { padding: 72px 24px; }
+      #hero { padding: 100px 24px 72px; }
+
+      .about-grid,
+      .abroad-grid { grid-template-columns: 1fr; gap: 48px; }
+
+      .clips-grid { grid-template-columns: 1fr 1fr; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .awards-grid { grid-template-columns: 1fr; }
+
+      .nav-links { gap: 20px; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 16px; }
+      section { padding: 56px 16px; }
+      #hero { padding: 96px 16px 56px; }
+
+      .clips-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+
+      .nav-links { display: none; }
+
+      footer { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-name" href="#hero">Tami Abdollah</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#abroad">Abroad</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Journalist &nbsp;·&nbsp; Editor &nbsp;·&nbsp; Investigative Reporter</p>
+    <h1 class="hero-name">Tami<br>Abdollah</h1>
+    <p class="hero-tagline">Two decades reporting at the intersection of power, accountability, and technology — from Baghdad to Brussels, Kyiv to Los Angeles.</p>
+    <div class="hero-badges">
+      <span class="badge">Associated Press</span>
+      <span class="badge">USA TODAY</span>
+      <span class="badge">Los Angeles Times</span>
+      <span class="badge">Noema Magazine</span>
+      <span class="badge">Wall Street Journal</span>
+    </div>
+    <a href="#work" class="hero-cta">View Selected Work &rarr;</a>
+  </div>
+  <div class="hero-scroll">
+    <span class="scroll-line"></span>
+    Scroll
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label">About</p>
+    <h2 class="section-title">Reporter. Editor.<br><em>Storyteller.</em></h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm a journalist and editor with more than two decades of experience across investigative reporting, national security, criminal justice, technology, and ideas-driven narrative journalism. I've broken stories that triggered new legislation, prompted congressional hearings, and secured the freedom of people wrongly imprisoned.</p>
+        <p>As Deputy Editor at Noema Magazine, I shape complex essays and deeply reported features by writers across the globe — work that has earned anthology selections, book deals with major publishers, and briefings before U.S. House Select Committee staff.</p>
+        <p>I served as the <strong>first cybersecurity reporter at The Associated Press</strong>, covering election security, the Apple encryption showdown, ransomware, and the internet of things before those beats were mainstream. I've reported on the ground in Iraq, Ukraine, and across Europe, Southeast Asia, and the Pacific.</p>
+        <p>When I'm not at a desk, you'll find me on a rock face, on a mountain, or somewhere remote with a map and too much gear.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-number">20+</div>
+          <div class="stat-label">Years in journalism</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Countries reported from</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">5</div>
+          <div class="stat-label">Major outlets as staff reporter</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">5</div>
+          <div class="stat-label">Languages spoken</div>
+        </div>
+        <div class="stat-card" style="grid-column: span 2;">
+          <div class="stat-label" style="font-size: 0.88rem; color: var(--text);">French &nbsp;·&nbsp; Spanish &nbsp;·&nbsp; Farsi &nbsp;·&nbsp; Mandarin &nbsp;·&nbsp; Arabic</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <p class="section-label">Experience</p>
+    <h2 class="section-title">A career built on<br><em>accountability.</em></h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-org">Noema Magazine</div>
+        <div class="timeline-role">Deputy Editor</div>
+        <div class="timeline-date">2023 – Present &nbsp;·&nbsp; Los Angeles</div>
+        <p class="timeline-desc">Edit and commission complex narrative essays and deeply reported features from writers around the globe, across technology, science, philosophy, AI, and global politics. Developed Noema's first-ever editorial AI policy — praised externally as an industry-leading model — and spearheaded the publication's adoption of audio.</p>
+        <ul class="timeline-highlights">
+          <li>Edited pieces selected for HarperCollins' "The Best American Science and Nature Writing"</li>
+          <li>Work led to Simon &amp; Schuster book deal and adoption into the Aspen Institute's leadership curriculum</li>
+          <li>Authors invited to brief U.S. House Select Committee staff; Chicago Manual of Style inquiries on AI-writing standards</li>
+          <li>Integrated AI editorial policy into contract language; trained and mentored new editorial staff</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-org">USA TODAY</div>
+        <div class="timeline-role">National Correspondent, Criminal Justice</div>
+        <div class="timeline-date">2021 – 2023 &nbsp;·&nbsp; Los Angeles / Kyiv</div>
+        <p class="timeline-desc">Covered the criminal justice system with a focus on systemic disparities and inequities. Traveled to Ukraine to cover the fallout of Russia's February 2022 invasion. Helped cover investigations into Donald Trump and Jan. 6 Committee findings.</p>
+        <ul class="timeline-highlights">
+          <li>Reporting contributed to the release of a Mohawk nation man imprisoned for roughly two decades</li>
+          <li>Covered Derek Chauvin's criminal prosecution across multiple platforms — video, podcast, radio, SMS reader outreach</li>
+          <li>Reported from Scandinavia, Western Europe, and Ukraine</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-org">dot.LA</div>
+        <div class="timeline-role">Senior Reporter</div>
+        <div class="timeline-date">2019 – 2021 &nbsp;·&nbsp; Los Angeles</div>
+        <p class="timeline-desc">On the launch team of a technology journalism startup covering the L.A. tech ecosystem. Reported on diversity and equity in venture capital funding and broke a five-part exclusive narrative investigation into a failed U.S. cannabis fund backed by a Russian oligarch.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-org">The Associated Press</div>
+        <div class="timeline-role">Cybersecurity &amp; Terrorism Reporter</div>
+        <div class="timeline-date">2015 – 2019 &nbsp;·&nbsp; Washington, D.C. / National</div>
+        <p class="timeline-desc">Served as the <strong>first AP cybersecurity reporter</strong> — covering election security, the 2016 presidential campaign, the government-Apple encryption standoff, ransomware, IoT threats, and national security. Also reported on FEMA's failures in post-hurricane Puerto Rico.</p>
+        <ul class="timeline-highlights">
+          <li>Multiple scoops on Apple/FBI encryption showdown; reported on 2016 election interference</li>
+          <li>Broke exclusive on $30M in federal contracts awarded to a newly-created company that never delivered emergency supplies to Puerto Rico — spurred Inspector General review and passage of new law</li>
+          <li>Temporarily covered President Trump's business conflicts and emoluments cases</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-org">The Associated Press</div>
+        <div class="timeline-role">Law Enforcement Reporter</div>
+        <div class="timeline-date">2013 – 2015 &nbsp;·&nbsp; Los Angeles</div>
+        <p class="timeline-desc">Covered the LAPD, LA County Sheriff's Department, FBI, DHS, ATF, and DEA from the AP's Los Angeles bureau. Won multiple AP "Best of the States" prizes for breaking news.</p>
+        <ul class="timeline-highlights">
+          <li>Broke series of exclusive stories on LAX airport attack failures — led to on-site congressional hearing</li>
+          <li>Wrote the first comprehensive look at police body camera policies nationwide</li>
+          <li>Covered the Sony Pictures hack investigation and cybersecurity threats to critical infrastructure</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-org">KPCC / NPR Los Angeles</div>
+        <div class="timeline-role">Education Reporter</div>
+        <div class="timeline-date">2011 – 2012 &nbsp;·&nbsp; Los Angeles</div>
+        <p class="timeline-desc">Multiplatform reporter for L.A.'s NPR affiliate. Created and branded the Pass/Fail education blog. Broke multiple exclusive stories on LAUSD failures; increased web traffic nearly 400% in the first month of reporting.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-org">Los Angeles Times</div>
+        <div class="timeline-role">Reporter</div>
+        <div class="timeline-date">2006 – 2009 &nbsp;·&nbsp; Los Angeles</div>
+        <p class="timeline-desc">Covered criminal justice, law enforcement, environment, government, and breaking news. Reported on nearly every major California fire, earthquake, or flood during the period.</p>
+        <ul class="timeline-highlights">
+          <li>Broke front-page stories on a DOJ probe into Orange County's jail system and a rogue DNA lab</li>
+          <li>Broke story on misuse of campaign funds that triggered a California ethics watchdog investigation</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-org">Development Alternatives, Inc. / USAID</div>
+        <div class="timeline-role">Reporting Officer</div>
+        <div class="timeline-date">2009 – 2010 &nbsp;·&nbsp; Baghdad, Iraq</div>
+        <p class="timeline-desc">Researched, documented, and monitored progress on more than 1,000 grants under USAID's $200M Iraq Rapid Assistance Program. Created regular reports for the State Department and USAID on reconstruction progress.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NOTABLE WORK -->
+<section id="work">
+  <div class="container">
+    <p class="section-label">Selected Work</p>
+    <h2 class="section-title">Stories that<br><em>moved the needle.</em></h2>
+    <div class="clips-grid">
+
+      <a class="clip-card" href="https://www.pbs.org/newshour/nation/apple-will-fight-order-to-help-fbi-unlock-san-bernardino-shooters-iphone" target="_blank" rel="noopener">
+        <div class="clip-pub">The Associated Press</div>
+        <div class="clip-headline">Apple vs. the FBI: Inside the Encryption Standoff</div>
+        <div class="clip-desc">Multiple exclusive scoops on the landmark government showdown over iPhone encryption — one of the defining technology and civil liberties stories of the decade.</div>
+        <span class="clip-tag">Cybersecurity &nbsp;·&nbsp; National Security</span>
+      </a>
+
+      <a class="clip-card" href="https://apnews.com/article/business-storms-only-on-ap-hurricane-harvey-puerto-rico-cbeff1a939324610b7a02b88f30eafbb" target="_blank" rel="noopener">
+        <div class="clip-pub">The Associated Press</div>
+        <div class="clip-headline">The $30 Million That Never Arrived: FEMA's Puerto Rico Contractor Failure</div>
+        <div class="clip-desc">Broke the exclusive story of emergency tarps and supplies contracted — and never delivered — to Puerto Rico after Hurricane Maria. Triggered Inspector General review and resulted in new federal law on contractor vetting.</div>
+        <span class="clip-tag">Investigative &nbsp;·&nbsp; Accountability</span>
+      </a>
+
+      <a class="clip-card" href="https://www.yahoo.com/news/ap-exclusive-phone-system-failure-lax-shooting-221433834.html" target="_blank" rel="noopener">
+        <div class="clip-pub">The Associated Press</div>
+        <div class="clip-headline">LAX Attack: A System's Failure</div>
+        <div class="clip-desc">Broke a series of exclusives on systemic security failures during the November 2013 Los Angeles airport shooting, leading directly to an on-site congressional hearing and policy reforms.</div>
+        <span class="clip-tag">Investigative &nbsp;·&nbsp; Public Safety</span>
+      </a>
+
+      <a class="clip-card" href="https://www.usatoday.com/story/news/2021/12/07/native-american-drug-sentence-case-sentencing-reform/8642637002/" target="_blank" rel="noopener">
+        <div class="clip-pub">USA TODAY</div>
+        <div class="clip-headline">Two Decades Behind Bars: A Mohawk Nation Man's Fight for Freedom</div>
+        <div class="clip-desc">Criminal justice investigation focused on systemic inequities — reporting contributed to the release of a Mohawk nation man sentenced to de facto life in prison.</div>
+        <span class="clip-tag">Criminal Justice &nbsp;·&nbsp; Investigative</span>
+      </a>
+
+      <a class="clip-card" href="clips/genius-fund-dotla.pdf" target="_blank" rel="noopener">
+        <div class="clip-pub">dot.LA</div>
+        <div class="clip-headline">The Rise and Fall of Genius Fund's $164M Cannabis Empire</div>
+        <div class="clip-desc">Exclusive narrative investigation into a failed U.S. cannabis fund backed by a Russian oligarch — exposing the intersection of foreign money, regulatory gaps, and American business culture.</div>
+        <span class="clip-tag">Business &nbsp;·&nbsp; Investigative</span>
+      </a>
+
+      <a class="clip-card" href="clips/oc-dna-lab-latimes.pdf" target="_blank" rel="noopener">
+        <div class="clip-pub">Los Angeles Times</div>
+        <div class="clip-headline">Arrested in O.C.? A DNA Sample Could Buy Freedom</div>
+        <div class="clip-desc">Investigation into the Orange County District Attorney's Office practice of dropping charges against defendants in exchange for DNA samples — a program that quietly built one of the largest local genetic databases in the country.</div>
+        <span class="clip-tag">Investigative &nbsp;·&nbsp; Criminal Justice</span>
+      </a>
+
+    </div>
+    <p style="margin-top: 20px; font-size: 0.8rem; color: var(--text-muted); font-style: italic;">* Update href attributes above with direct links to published articles.</p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <p class="section-label">Expertise</p>
+    <h2 class="section-title">Craft &amp;<br><em>Capabilities.</em></h2>
+    <div class="skills-grid">
+
+      <div class="skill-group">
+        <h3>Reporting Beats</h3>
+        <ul class="skill-list">
+          <li>Investigative journalism</li>
+          <li>National security &amp; cybersecurity</li>
+          <li>Criminal justice</li>
+          <li>Technology &amp; AI</li>
+          <li>Law enforcement</li>
+          <li>Science &amp; environment</li>
+          <li>Global politics</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3>Editorial</h3>
+        <ul class="skill-list">
+          <li>Developmental editing</li>
+          <li>Narrative &amp; long-form essays</li>
+          <li>Editorial AI policy</li>
+          <li>Commissioning &amp; pitching</li>
+          <li>Fact-checking workflows</li>
+          <li>Print production cycles</li>
+          <li>Writer mentorship</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3>Multimedia</h3>
+        <ul class="skill-list">
+          <li>Radio production</li>
+          <li>Podcast &amp; audio</li>
+          <li>Video shooting &amp; editing</li>
+          <li>Page design</li>
+          <li>Social media strategy</li>
+          <li>Data journalism (Python)</li>
+          <li>110 wpm typing</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3>Credentials</h3>
+        <ul class="skill-list">
+          <li>Python for Data Journalists</li>
+          <li>Paper &amp; Database Trails cert.</li>
+          <li>Cybersecurity Institute for Journalists</li>
+          <li>Loyola Law School Fellow</li>
+          <li>UC Berkeley, BA English &amp; Poli Sci</li>
+          <li>La Sorbonne — Paris</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABROAD -->
+<section id="abroad">
+  <div class="container">
+    <p class="section-label">International</p>
+    <h2 class="section-title">Reporting from<br><em>the field.</em></h2>
+    <div class="abroad-grid">
+      <div class="abroad-text">
+        <p>My journalism has taken me across four continents — embedded with USAID reconstruction efforts in Baghdad, on the ground in Ukraine covering Russia's 2022 invasion, and freelancing across Southeast Asia and the Pacific.</p>
+        <p>This experience informs everything I edit and report: a practical understanding of conflict, reconstruction, and the human cost of institutional failure — alongside an instinct for the story underneath the story.</p>
+        <p>I studied at La Sorbonne in Paris and worked in the Wall Street Journal's Paris and Brussels bureaus early in my career, giving me a European lens I've carried ever since.</p>
+      </div>
+      <ul class="locations-list">
+        <li>
+          <span class="loc-flag">🇮🇶</span>
+          <div>
+            <div class="loc-name">Baghdad, Iraq</div>
+            <div class="loc-context">Reporting Officer, USAID $200M Iraq Rapid Assistance Program — 2009–2010</div>
+          </div>
+        </li>
+        <li>
+          <span class="loc-flag">🇺🇦</span>
+          <div>
+            <div class="loc-name">Ukraine</div>
+            <div class="loc-context">On-the-ground coverage of Russia's February 2022 invasion for USA TODAY</div>
+          </div>
+        </li>
+        <li>
+          <span class="loc-flag">🇫🇷</span>
+          <div>
+            <div class="loc-name">Paris &amp; Brussels</div>
+            <div class="loc-context">Wall Street Journal European bureaus; studied at La Sorbonne — 2005–2006</div>
+          </div>
+        </li>
+        <li>
+          <span class="loc-flag">🌏</span>
+          <div>
+            <div class="loc-name">Southeast Asia &amp; Pacific</div>
+            <div class="loc-context">Freelance — New Zealand, Indonesia, Thailand, Malaysia, Singapore — 2010–2011</div>
+          </div>
+        </li>
+        <li>
+          <span class="loc-flag">🌍</span>
+          <div>
+            <div class="loc-name">Northern Europe</div>
+            <div class="loc-context">Traveled to Scandinavia reporting on criminal justice systems for USA TODAY</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="container">
+    <p class="section-label">Recognition</p>
+    <h2 class="section-title">Awards &<br><em>Honors.</em></h2>
+    <div class="awards-grid">
+      <div class="award-item">
+        <div class="award-name">Award for Investigative Reporting, Radio</div>
+        <div class="award-detail">Recognition for investigative radio journalism</div>
+      </div>
+      <div class="award-item">
+        <div class="award-name">Distinguished Journalist Award, Digital Media</div>
+        <div class="award-detail">Recognition for outstanding digital journalism</div>
+      </div>
+      <div class="award-item">
+        <div class="award-name">AP "Best of the States" — Multiple Awards</div>
+        <div class="award-detail">Best national beat of the week; breaking news, The Associated Press</div>
+      </div>
+      <div class="award-item">
+        <div class="award-name">Loyola Law School Journalism Fellow</div>
+        <div class="award-detail">Competitive fellowship at the intersection of law and journalism</div>
+      </div>
+      <div class="award-item">
+        <div class="award-name">HarperCollins Anthology Selection</div>
+        <div class="award-detail">"The Best American Science and Nature Writing" — Noema Magazine, edited work</div>
+      </div>
+      <div class="award-item">
+        <div class="award-name">Congressional Hearing, LAX Investigation</div>
+        <div class="award-detail">Exclusive reporting on LAX security failures led to on-site congressional hearing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Contact</p>
+    <h2 class="contact-title">Let's work together.</h2>
+    <p class="contact-sub">Available for editing projects, writing assignments, speaking engagements, and editorial consulting. Reach out via email or connect on LinkedIn.</p>
+    <div class="contact-links">
+      <a href="mailto:abdollah@gmail.com" class="contact-btn primary">Email Me</a>
+      <a href="https://www.linkedin.com/in/abdollah" class="contact-btn" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://noemamag.com" class="contact-btn" target="_blank" rel="noopener">Noema Magazine</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Tami Abdollah</span>
+  <span class="footer-note">Journalist &nbsp;·&nbsp; Editor &nbsp;·&nbsp; Investigative Reporter</span>
+</footer>
+
+</body>
+</html>
